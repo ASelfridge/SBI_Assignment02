@@ -1,19 +1,46 @@
 #include "ofApp.h"
+#include "projectConstants.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
 
+	ofSetWindowShape(
+		projectConstants::PROJ_WINDOW_RES_X, 
+		projectConstants::PROJ_WINDOW_RES_Y);
+
+	ofSetFrameRate(projectConstants::PROJ_DESIRED_FRAMERATE);
+
+	//initialize the game
+	m_game.init();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+	m_game.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+	m_game.render();
 }
+
+void ofApp::beginGame() {
+	m_game.begin();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
